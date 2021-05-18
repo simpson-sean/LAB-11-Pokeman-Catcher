@@ -1,4 +1,5 @@
-export const pokeBall = [
+
+const pokeBall = [
     
     {
         id: 1,
@@ -66,3 +67,5 @@ export const pokeBall = [
     },
 
 ];
+
+export default pokeBall;
