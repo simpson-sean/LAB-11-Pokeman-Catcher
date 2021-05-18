@@ -1,6 +1,7 @@
 // import functions and grab DOM elements
 import pokeBall from './data/pokemons.js';
 import { capturePokemon, encounterPokemon } from './data/local-storage.js';
+import { getTotalCaptured } from './data/data-utils.js';
 
 
 // initialize state
@@ -18,13 +19,23 @@ catchButton.addEventListener('click', () => {
   //on clicking catch button
     const selectedRadio = document.querySelector(':checked');
     const selectedPokemonId = selectedRadio.value;
+    const totalCaptured = getTotalCaptured();
 
     capturePokemon(selectedPokemonId);
-  
-  //call renderThreePokemon
-    renderThreePokemon();
+    if (totalCaptured === 10) {
+        window.location.replace('/results');
+    
+    } else {
+        renderThreePokemon();
+    }
 
 });
+  
+  //call renderThreePokemon
+
+renderThreePokemon();
+
+
 
 // set event listeners 
 
@@ -85,3 +96,5 @@ function renderThreePokemon() {
 
 }
 
+//Need to track total number of catches
+//
