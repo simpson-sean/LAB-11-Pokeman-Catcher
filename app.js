@@ -21,10 +21,10 @@ catchButton.addEventListener('click', () => {
     const selectedPokemonId = selectedRadio.value;
     const totalCaptured = getTotalCaptured();
     console.log(totalCaptured);
-    
+
     capturePokemon(selectedPokemonId);
     if (totalCaptured === 10) {
-        window.location.replace('/results');
+        window.location.replace('./results/index.html');
     
     } else {
         renderThreePokemon();
