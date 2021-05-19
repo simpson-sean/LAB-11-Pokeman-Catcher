@@ -1,5 +1,5 @@
 import { getPokedex } from '../data/local-storage.js';
-import { pokemonNames, pokemonCaptured, pokemonColors, } from '../data/data-utils.js';
+import { pokemonNames, pokemonColors, pokemonCaptured } from '../data/data-utils.js';
 
 var ctx = document.getElementById('my-chart').getContext('2d');
 
@@ -8,14 +8,14 @@ const pokedex = getPokedex();
 //console.log(pokedex);
 
 const names = pokemonNames(pokedex);
-//console.log(names);
+console.log(names);
 
 const capturedData = pokemonCaptured(pokedex);
-//console.log(capturedData);
+console.log(capturedData);
 
 const colors = pokemonColors(pokedex);
 
-let myChart = new Chart(ctx, {
+new Chart(ctx, {
 
     type: 'bar',
     data: {

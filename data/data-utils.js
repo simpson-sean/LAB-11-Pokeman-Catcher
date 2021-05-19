@@ -2,7 +2,7 @@ import { findById } from '../utils.js';
 import { getPokedex } from './local-storage.js';
 import pokemon from './pokemons.js';
 
-export function mungeCaptured(pokemonArray) {
+export function pokemonCaptured(pokemonArray) {
     const results = [];
 
     for (let poke of pokemonArray) {
@@ -14,19 +14,20 @@ export function mungeCaptured(pokemonArray) {
     return results;
 }
 
-export function mungeNames(pokemonArray) {
+export function pokemonNames(pokemonArray) {
     const results = [];
 
     for (let poke of pokemonArray) {
         const data = findById(pokemon, poke.id);
+        console.log(data);
     //  console.log(data.pokemon);
-        results.push(data.pokemon);
+        results.push(data.name);
     }
 
     return results;
 }
 
-export function mungeColors(pokemonArray) {
+export function pokemonColors(pokemonArray) {
     const results = [];
 
     for (let poke of pokemonArray) {
@@ -39,12 +40,12 @@ export function mungeColors(pokemonArray) {
 
 export function getTotalCaptured() {
     
-    let captureCounter = 0;
+    let captureCounter = 1;
     
-    let capPokedex = getPokedex();
+    const capPokedex = getPokedex();
 
     for (let poke of capPokedex) {
-        captureCounter = captureCounter + poke.encountered;
+        captureCounter = captureCounter + poke.captured;
     }
     return captureCounter;
 

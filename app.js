@@ -20,7 +20,8 @@ catchButton.addEventListener('click', () => {
     const selectedRadio = document.querySelector(':checked');
     const selectedPokemonId = selectedRadio.value;
     const totalCaptured = getTotalCaptured();
-
+    console.log(totalCaptured);
+    
     capturePokemon(selectedPokemonId);
     if (totalCaptured === 10) {
         window.location.replace('/results');
@@ -30,12 +31,6 @@ catchButton.addEventListener('click', () => {
     }
 
 });
-  
-  //call renderThreePokemon
-
-renderThreePokemon();
-
-
 
 // set event listeners 
 
@@ -97,4 +92,3 @@ function renderThreePokemon() {
 }
 
 //Need to track total number of catches
-//
