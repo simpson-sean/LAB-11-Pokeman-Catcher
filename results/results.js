@@ -8,10 +8,10 @@ const pokedex = getPokedex();
 //console.log(pokedex);
 
 const names = pokemonNames(pokedex);
-console.log(names);
+//console.log(names);
 
 const capturedData = pokemonCaptured(pokedex);
-console.log(capturedData);
+//console.log(capturedData);
 
 const colors = pokemonColors(pokedex);
 
